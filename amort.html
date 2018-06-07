@@ -49,10 +49,10 @@ function addRecord(balance, interest, principal, current){
 	var cell4 = row.insertCell(3);
 	var cell5 = row.insertCell(4);
     cell1.innerHTML = current.toLocaleDateString("en-US");
-    cell2.innerHTML = "$" + parseFloat(Math.round(balance)).toFixed(2);
-	cell3.innerHTML = "$" + parseFloat(Math.round(interest)).toFixed(2);
-	cell4.innerHTML = "$" + parseFloat(Math.round(principal)).toFixed(2);
-	cell5.innerHTML = "$" + parseFloat(Math.round(interest + principal)).toFixed(2);
+    cell2.innerHTML = "$" + parseFloat(balance).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+	cell3.innerHTML = "$" + parseFloat(interest).toFixed(2);
+	cell4.innerHTML = "$" + parseFloat(principal).toFixed(2);
+	cell5.innerHTML = "$" + parseFloat(interest + principal).toFixed(2);
 }
 
 </script>
